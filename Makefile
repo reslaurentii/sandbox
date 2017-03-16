@@ -1,6 +1,6 @@
 IDIR=include
 CC=gcc
-CFLAGS=-I$(IDIR)
+CFLAGS=-I$(IDIR) -Wall
 
 ODIR=build
 LDIR=../lib
@@ -8,17 +8,17 @@ SDIR=src
 
 LIBS=-lm
 
-_DEPS = colors.h
+_DEPS = colors.h print.h ifstatment.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = colors.o sandbox.o
+_OBJ = colors.o ifstatment.o sandbox.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 sandbox: $(OBJ)
-	gcc -o $(ODIR)/$@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -o $(ODIR)/$@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 

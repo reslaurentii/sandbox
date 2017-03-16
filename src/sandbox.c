@@ -3,6 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 #include "colors.h"
+#include "print.h"
+#include "ifstatment.h"
 
 #define N_CICLES 10
 #define S_SLEEP 1
@@ -38,7 +40,10 @@ int print_on_same_line(int argc, char **argv)
 }
 
 int main(int argc, char **argv){
+
 	print_on_same_line(argc,argv);
 	print_colors();
+	ifstatment();
+
 	return 0;
 }
