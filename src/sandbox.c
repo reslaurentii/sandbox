@@ -5,6 +5,9 @@
 #include "colors.h"
 #include "print.h"
 #include "ifstatment.h"
+#include "pointers.h"
+#include "preprocessor.h"
+#include "structs.h"
 
 #define N_CICLES 10
 #define S_SLEEP 1
@@ -44,6 +47,16 @@ int main(int argc, char **argv){
 	print_on_same_line(argc,argv);
 	print_colors();
 	ifstatment();
+	pointer1();
+	pointer2();
+	pointer3();
+	pointer4();
+
+	preprocessor1();
+	preprocessor2();
+
+	struct1();
+	struct2();
 
 	return 0;
 }

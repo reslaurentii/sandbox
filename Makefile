@@ -8,10 +8,10 @@ SDIR=src
 
 LIBS=-lm
 
-_DEPS = colors.h print.h ifstatment.h
+_DEPS = colors.h print.h ifstatment.h pointers.h preprocessor.h structs.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = colors.o ifstatment.o sandbox.o
+_OBJ = colors.o ifstatment.o pointers.o preprocessor.o structs.o sandbox.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
