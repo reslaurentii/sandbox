@@ -8,6 +8,8 @@
 #include "pointers.h"
 #include "preprocessor.h"
 #include "structs.h"
+#include "controlFlow.h"
+
 
 #define N_CICLES 10
 #define S_SLEEP 1
@@ -54,6 +56,11 @@ int main(int argc, char **argv){
 
 	preprocessor1();
 	preprocessor2();
+
+	flow1();
+	flow2();
+	flow3();
+	flow4();
 
 	struct1();
 	struct2();

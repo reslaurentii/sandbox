@@ -6,6 +6,7 @@ static int **pp=p;
 
 int pointer1(void)
 {
+	printf("----- START %s\n",__FUNCTION__);
 	int i,*p;
 	for(i=0; i<=4; i++)
 		PR(d,a[i]);
@@ -37,9 +38,6 @@ int pointer1(void)
 
 }
 //Simple array and pointer
-
-
-
 
 int pointer2(void)
 {
@@ -74,7 +72,7 @@ int *l=b[1];
 
 int pointer3(void)
 {
-    printf("%s\n",__FUNCTION__);
+    printf("----- START %s\n",__FUNCTION__);
     int i;
 	for(i=0; i<3; i++)
 		PRINT3(d,b[i][2-i],*b[i],*(*(b+i)+i));

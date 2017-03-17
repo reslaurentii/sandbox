@@ -1,7 +1,15 @@
 #include "print.h"
 
+struct s1 {
+	char *s;
+	int i;
+	struct s1 *s1p;
+};
+
+
 int struct1(void)
 {
+	printf("----- START %s\n",__FUNCTION__);
 	static struct s1 {
 		char c[4], *s;
 	} s1 = {"abc","def"};
@@ -16,17 +24,13 @@ int struct1(void)
 
 	PRINT2(s,s2.cp,s2.ss1.s);
 	PRINT2(s,++s2.cp,++s2.ss1.s);
+	printf("----- END %s\n",__FUNCTION__);
 }
 
 
-struct s1 {
-	char *s;
-	int i;
-	struct s1 *s1p;
-};
-
 int struct2(void)
 {
+	printf("----- START %s\n",__FUNCTION__);
 	static struct s1 a[] = {
 		{ "abcd", 1, a+1},
 		{ "efgh", 2, a+2},
@@ -38,18 +42,22 @@ int struct2(void)
 
 	PRINT3(s,a[0].s,p->s,a[2].s1p->s);
 
+	printf("Ciclo for\n");
+
 	for(i=0; i<2; i++) {
 		PR(d,--a[i].i);
-		PR(c,++a[i].s[3]);
+		/* PR(d,++a[i].s[3]); */
 		NL;
 	}
 
 	PRINT3(s,++(p->s),a[(++p)->i].s,a[--(p->s1p->i)].s);
+	printf("----- END %s\n",__FUNCTION__);
 }
 
 /*
 int struct3(void)
 {
+	printf("----- START %s\n",__FUNCTION__);
 	static struct s1 a[] = {
 		{"abcd", a+1},
 		{"efgh",a+2},
@@ -68,9 +76,9 @@ int struct3(void)
 
 	swap(p[0],p[0]->s1p);
 	PRINT3(s,p[0]->s,(*++p[0]).s,++(*++(*p)->s1p).s);
-
-} */
-
+	printf("----- END %s\n",__FUNCTION__);
+}
+*/
 swap(p1,p2)
 struct s1 *p1,*p2;
 { char *temp;

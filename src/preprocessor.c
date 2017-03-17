@@ -1,5 +1,4 @@
 #include <stdio.h>
-/* #include<print.h> */
 
 #define FUDGE(k) k+3.14159
 #define PR(a) printf("a= %d\t",(int)(a))
@@ -10,6 +9,7 @@
 
 int preprocessor1(void)
 {
+printf("----- START %s\n",__FUNCTION__);
 	{
 		int x=2;
 		PRINT(x*FUDGE(2));
@@ -26,6 +26,7 @@ int preprocessor1(void)
 		PRINT3(MAX(x++,y),x,y);
 		PRINT3(MAX(x++,y),x,y);
 	}
+	printf("----- END %s\n",__FUNCTION__);
 }
 
 
@@ -43,6 +44,7 @@ int preprocessor1(void)
 
 int preprocessor2(void)
 {
+	printf("----- START %s\n",__FUNCTION__);
 	{
 		int x=1;
 		PRINT( -NEG(x) );
@@ -65,4 +67,5 @@ int preprocessor2(void)
 				putchar(c);
 		putchar('\n');
 	}
+	printf("----- END %s\n",__FUNCTION__);
 }

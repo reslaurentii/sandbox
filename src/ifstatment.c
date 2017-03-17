@@ -3,6 +3,7 @@
 
 void ifstatment()
 {
+	printf("----- START %s\n",__FUNCTION__);
 	int x,y=1,z;
 
 	if(y!=0) x=5;
@@ -26,4 +27,5 @@ void ifstatment()
 
 	if(x=z=y) x=3;
 	PRINT2(d,x,z);
+	printf("----- END %s\n",__FUNCTION__);
 }
