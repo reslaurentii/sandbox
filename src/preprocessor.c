@@ -9,7 +9,7 @@
 
 int preprocessor1(void)
 {
-printf("----- START %s\n",__FUNCTION__);
+	printf("----- START %s\n",__FUNCTION__);
 	{
 		int x=2;
 		PRINT(x*FUDGE(2));
@@ -27,6 +27,8 @@ printf("----- START %s\n",__FUNCTION__);
 		PRINT3(MAX(x++,y),x,y);
 	}
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
+
 }
 
 
@@ -68,4 +70,5 @@ int preprocessor2(void)
 		putchar('\n');
 	}
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
 }

@@ -28,4 +28,5 @@ void ifstatment()
 	if(x=z=y) x=3;
 	PRINT2(d,x,z);
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
 }

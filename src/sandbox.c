@@ -48,6 +48,7 @@ int main(int argc, char **argv){
 
 	print_on_same_line(argc,argv);
 	print_colors();
+
 	ifstatment();
 	pointer1();
 	pointer2();

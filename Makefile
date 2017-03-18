@@ -16,6 +16,7 @@ _OBJ = colors.o ifstatment.o pointers.o preprocessor.o structs.o  controlFlow.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+	mkdir -p build
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 sandbox: $(OBJ)

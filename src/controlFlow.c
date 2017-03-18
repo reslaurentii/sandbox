@@ -32,6 +32,7 @@ int flow1(void)
 	if(x=z=y) ; x=3;
 	PRINT2(d,x,z);
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
 }
 
 int flow2(void)
@@ -62,6 +63,7 @@ int flow2(void)
 	for(x=0,y=1000; y>1; x++,y/=10)
 		PRINT2(d,x,y);
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
 }
 
 
@@ -89,6 +91,8 @@ int flow3(void)
 		done = TRUE;
 	PRINT3(d,low,in,high);
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
+
 }
 
 
@@ -111,4 +115,5 @@ int flow4(void)
 	}
 	putchar('\n');
 	printf("----- END %s\n",__FUNCTION__);
+	return 0;
 }
