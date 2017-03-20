@@ -1,7 +1,7 @@
 #include "print.h"
 #include "ifstatment.h"
 
-void ifstatment()
+int ifstatment()
 {
 	printf("----- START %s\n",__FUNCTION__);
 	int x,y=1,z;

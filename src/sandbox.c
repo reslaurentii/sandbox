@@ -14,6 +14,12 @@
 #define N_CICLES 10
 #define S_SLEEP 1
 
+static int last_func(void) {
+	printf("----- DONE %s\n",__FUNCTION__);
+	printf("#######################################\n");
+	return -1;
+}
+
 int print_on_same_line(int argc, char **argv)
 {
 	int i = 0;
@@ -44,27 +50,31 @@ int print_on_same_line(int argc, char **argv)
 	return 0;
 }
 
+typedef int (*intFunc)(void);
+intFunc f[] =  {
+	ifstatment,
+	pointer1,
+	pointer2,
+	pointer3,
+	pointer4,
+	preprocessor1,
+	preprocessor2,
+	flow1,
+	flow2,
+	flow3,
+	flow4,
+	struct1,
+	struct2,
+	last_func
+};
+
 int main(int argc, char **argv){
 
 	print_on_same_line(argc,argv);
 	print_colors();
 
-	ifstatment();
-	pointer1();
-	pointer2();
-	pointer3();
-	pointer4();
-
-	preprocessor1();
-	preprocessor2();
-
-	flow1();
-	flow2();
-	flow3();
-	flow4();
-
-	struct1();
-	struct2();
+	intFunc *p = f;
+	while (!(*p++)()) {}
 
 	return 0;
 }

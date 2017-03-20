@@ -1,1 +1,1 @@
-void ifstatment();
+int ifstatment();
