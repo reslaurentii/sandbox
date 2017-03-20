@@ -1,0 +1,107 @@
+./build/sandbox
+Hello, world! --> 0Hello, world! --> 1Hello, world! --> 2Hello, world! --> 3Hello, world! --> 4Hello, world! --> 5Hello, world! --> 6Hello, world! --> 7Hello, world! --> 8Hello, world! --> 9Hello, world! --> 10
+[47m[30mThis text is BLACK![0m
+[31mThis text is RED![0m
+[32mThis text is GREEN![0m
+[33mThis text is YELLOW![0m
+[34mThis text is BLUE![0m
+[35mThis text is MAGENTA![0m
+[36mThis text is CYAN![0m
+[37mThis text is WHITE![0m
+----- START ifstatment
+x= 5	
+x= 5	
+x= 1	
+x= 7	z= 0	
+x= 3	z= 0	
+x= 3	z= 1	
+----- END ifstatment
+----- START pointer1
+a[i]= 0	a[i]= 1	a[i]= 2	a[i]= 3	a[i]= 4	
+*p= 0	*p= 1	*p= 2	*p= 3	*p= 4	
+
+p[i]= 1	p[i]= 2	p[i]= 3	p[i]= 4	p[i]= 0	
+*(p+i)= 0	*(p+i)= 2	*(p+i)= 4	
+
+*p= 4	*p= 3	*p= 2	*p= 1	*p= 0	
+p[-i]= 4	p[-i]= 3	p[-i]= 2	p[-i]= 1	p[-i]= 0	
+a[p-a]= 4	a[p-a]= 3	a[p-a]= 2	a[p-a]= 1	a[p-a]= 0	
+----- END pointer1
+----- START pointer2
+a= -1957433216	*a= 0	
+p= -1957433120	*p= -1957433216	**p= 0	
+pp= -1957433120	*pp= -1957433216	**pp= 0	
+
+pp-p= 1	*pp-a= 1	**pp= 1	
+pp-p= 2	*pp-a= 2	**pp= 2	
+pp-p= 3	*pp-a= 3	**pp= 3	
+pp-p= 3	*pp-a= 4	**pp= 4	
+
+pp-p= 1	*pp-a= 1	**pp= 1	
+pp-p= 1	*pp-a= 2	**pp= 2	
+pp-p= 1	*pp-a= 2	**pp= 3	
+----- END pointer2
+----- START pointer3
+b[i][2-i]= 3	*b[i]= 1	*(*(b+i)+i)= 1	
+b[i][2-i]= 5	*b[i]= 4	*(*(b+i)+i)= 5	
+b[i][2-i]= 7	*b[i]= 7	*(*(b+i)+i)= 9	
+
+*pb[i]= 1	l[i]= 4	
+*pb[i]= 4	l[i]= 5	
+*pb[i]= 7	l[i]= 6	
+----- END pointer3
+----- START pointer4
+POINTERSTEW
+----- END pointer4
+----- START preprocessor1
+a= 7	
+a= 0	a= 50	a= 100	a= 302	
+a= 2	a= 2	a= 2	
+a= 3	a= 4	a= 2	
+----- END preprocessor1
+----- START preprocessor2
+a= 1	
+a= 1	
+a= 1	
+           
+----- END preprocessor2
+----- START flow1
+x= 5	
+x= 5	
+x= 1	
+x= 7	z= 0	
+x= 3	z= 0	
+x= 3	z= 1	
+----- END flow1
+----- START flow2
+x= 10	y= 10	
+x= 55	y= 10	
+x= 9	y= 11	z= 11	
+x= 9	y= 10	
+x= 10	y= 10	
+x= 0	y= 1000	
+x= 1	y= 100	
+x= 2	y= 10	
+----- END flow2
+----- START flow3
+low= 25	in= 0	high= 0	
+low= 3	in= 6	high= 16	
+----- END flow3
+----- START flow4
+SWITCH SWAMP 
+----- END flow4
+----- START struct1
+s1.c[0]= a	*s1.s= d	
+s1.c= abc	s1.s= def	
+s2.cp= ghi	s2.ss1.s= mno	
+++s2.cp= hi	++s2.ss1.s= no	
+----- END struct1
+----- START struct2
+a[0].s= abcd	p->s= abcd	a[2].s1p->s= abcd	
+Ciclo for
+--a[i].i= 0	
+--a[i].i= 1	
+++(p->s)= bcd	a[(++p)->i].s= efgh	a[--(p->s1p->i)].s= ijkl	
+----- END struct2
+----- DONE!!! ----- last_func
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
