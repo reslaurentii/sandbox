@@ -8,6 +8,10 @@ Hello, world! --> 0Hello, world! --> 1Hello, world! --> 2Hello, world! --> 3
 [35mThis text is MAGENTA![0m
 [36mThis text is CYAN![0m
 [37mThis text is WHITE![0m
+11
+1
+0
+1
 ----- START ifstatment
 x= 5	
 x= 5	
@@ -28,9 +32,9 @@ p[-i]= 4	p[-i]= 3	p[-i]= 2	p[-i]= 1	p[-i]= 0
 a[p-a]= 4	a[p-a]= 3	a[p-a]= 2	a[p-a]= 1	a[p-a]= 0	
 ----- END pointer1
 ----- START pointer2
-a= -1957433216	*a= 0	
-p= -1957433120	*p= -1957433216	**p= 0	
-pp= -1957433120	*pp= -1957433216	**pp= 0	
+a= -1396567936	*a= 0	
+p= -1396567840	*p= -1396567936	**p= 0	
+pp= -1396567840	*pp= -1396567936	**pp= 0	
 
 pp-p= 1	*pp-a= 1	**pp= 1	
 pp-p= 2	*pp-a= 2	**pp= 2	
@@ -103,5 +107,10 @@ Ciclo for
 --a[i].i= 1	
 ++(p->s)= bcd	a[(++p)->i].s= efgh	a[--(p->s1p->i)].s= ijkl	
 ----- END struct2
+----- START struct3
+p[0]->s= efgh	(*p)->s= efgh	(**p).s= efgh	
+p[0]->s= abcd	(*p)->s= abcd	(*p)->s2p->s= ijkl	
+p[0]->s= ijkl	(*++p[0]).s= abcd	++(*++(*p)->s2p).s= jkl	
+----- END struct3
 ----- DONE!!! ----- last_func
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
