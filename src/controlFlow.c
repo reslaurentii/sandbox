@@ -8,7 +8,6 @@
 int flow1(void)
 {
 	printf("----- START %s\n",__FUNCTION__);
-	// int x, y=1, z, d;
 	int x, y=1, z;
 
 	if(y!=0) x=5;
