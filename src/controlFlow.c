@@ -8,7 +8,8 @@
 int flow1(void)
 {
 	printf("----- START %s\n",__FUNCTION__);
-	int x, y=1, z,d;
+	// int x, y=1, z, d;
+	int x, y=1, z;
 
 	if(y!=0) x=5;
 	PRINT1(d,x);
@@ -66,7 +67,6 @@ int flow2(void)
 	return 0;
 }
 
-
 char input1[]="PI=3.14159, approximately";
 
 int flow3(void)
@@ -94,7 +94,6 @@ int flow3(void)
 	return 0;
 
 }
-
 
 char input2[] = "SSSWILTECH1\1\11w\1WALLMP1";
 

@@ -6,6 +6,10 @@ struct s1 {
 	struct s1 *s1p;
 };
 
+struct s2 {
+	char *s;
+	struct s2 *s2p;
+};
 
 int struct1(void)
 {
@@ -27,7 +31,6 @@ int struct1(void)
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
-
 
 int struct2(void)
 {
@@ -57,39 +60,37 @@ int struct2(void)
 	return 0;
 }
 
-/*
- *  gcc 6.x doesn't compile this function. Array is not legal.
- * error: initializer element is not computable at load time
-   int struct3(void)
-   {
-        printf("----- START %s\n",__FUNCTION__);
+int struct3(void)
+{
+	printf("----- START %s\n",__FUNCTION__);
 
-        static struct s1 a[] = {
-                {"abcd", a+1},
-                {"efgh",a+2},
-                {"ijkl",a}
-        };
+	static struct s2 a[] = {
+		{"abcd", a+1},
+		{"efgh",a+2},
+		{"ijkl",a}
+	};
 
-        struct s1 *p[3];
-        int i;
+	struct s2 *p[3];
+	int i;
 
-        for (i=0; i<3; i++ )
-                p[i] = a[i].s1p;
-        PRINT3(s,p[0]->s,(*p)->s,(**p).s);
+	for (i=0; i<3; i++ )
+		p[i] = a[i].s2p;
+	PRINT3(s,p[0]->s,(*p)->s,(**p).s);
 
-        swap(*p,a);
-        PRINT3(s,p[0]->s,(*p)->s,(*p)->s1p->s);
+	swap(*p,a);
+	PRINT3(s,p[0]->s,(*p)->s,(*p)->s2p->s);
 
-        swap(p[0],p[0]->s1p);
-        PRINT3(s,p[0]->s,(*++p[0]).s,++(*++(*p)->s1p).s);
-        printf("----- END %s\n",__FUNCTION__);
-   }
- */
-swap(p1,p2)
+	swap(p[0],p[0]->s2p);
+	PRINT3(s,p[0]->s,(*++p[0]).s,++(*++(*p)->s2p).s);
+	printf("----- END %s\n",__FUNCTION__);
+	return 0;
+}
+
+int swap(p1,p2)
 struct s1 *p1,*p2;
 { char *temp;
-  temp = p1->s;
-  p1->s = p2->s;
-  p2->s =temp;}
-
-//Array of Pointer to Structures
+	temp = p1->s;
+	p1->s = p2->s;
+	p2->s =temp;
+	return 0;
+}

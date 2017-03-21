@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "colors.h"
 #include "print.h"
+#include "operators.h"
 #include "ifstatment.h"
 #include "pointers.h"
 #include "preprocessor.h"
@@ -18,6 +19,7 @@ static int last_func(void) {
 
 typedef int (*intFunc)(void);
 static intFunc f[] =  {
+	basic_operator,
 	ifstatment,
 	pointer1,
 	pointer2,
@@ -31,6 +33,7 @@ static intFunc f[] =  {
 	flow4,
 	struct1,
 	struct2,
+	struct3,
 	last_func
 };
 
