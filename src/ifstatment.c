@@ -1,6 +1,7 @@
 #include "print.h"
 #include "ifstatment.h"
 
+/* Bad indented code */
 int ifstatment()
 {
 	printf("----- START %s\n",__FUNCTION__);

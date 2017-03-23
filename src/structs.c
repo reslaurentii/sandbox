@@ -10,6 +10,7 @@ struct s2 {
 	char *s;
 	struct s2 *s2p;
 };
+int swap(struct s1 *p1, struct s1 *p2);
 
 int struct1(void)
 {
@@ -77,18 +78,18 @@ int struct3(void)
 		p[i] = a[i].s2p;
 	PRINT3(s,p[0]->s,(*p)->s,(**p).s);
 
-	swap(*p,a);
+	swap((struct s1 *) *p, (struct s1 *) a);
 	PRINT3(s,p[0]->s,(*p)->s,(*p)->s2p->s);
 
-	swap(p[0],p[0]->s2p);
+	swap((struct s1 *) p[0],(struct s1 *) (p[0]->s2p));
 	PRINT3(s,p[0]->s,(*++p[0]).s,++(*++(*p)->s2p).s);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
 
-int swap(p1,p2)
-struct s1 *p1,*p2;
-{ char *temp;
+int swap(struct s1 *p1, struct s1 *p2)
+{
+	char *temp;
 	temp = p1->s;
 	p1->s = p2->s;
 	p2->s =temp;
