@@ -28,5 +28,5 @@ sandbox: $(OBJ)
 clean:
 	rm -f $(ODIR)/*.o $(ODIR)/sandbox *~ core $(INCDIR)/*~
 
-test:
+run:
 	./build/sandbox
