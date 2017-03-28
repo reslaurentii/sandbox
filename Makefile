@@ -23,10 +23,12 @@ $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 sandbox: $(OBJ)
 	$(CC) -o $(ODIR)/$@ $^ $(CFLAGS) $(LIBS)
 
-.PHONY: clean
+.PHONY: clean all
 
 clean:
-	rm -f $(ODIR)/*.o $(ODIR)/sandbox *~ core $(INCDIR)/*~
+	-rm -f $(ODIR)/*.o $(ODIR)/sandbox *~ core $(INCDIR)/*~
 
 run:
 	./build/sandbox
+
+all: clean sandbox run
