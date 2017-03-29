@@ -1,4 +1,4 @@
-Sandbox project is a collection of simple (and useless) functions to test basic statements of language C.
+Sandbox project is a collection of simple (and useless) functions to test basic statements of C language.
 (if statements, priority, assignment, ...)
 
 The code is intentionally cryptic and poorly indented.
@@ -13,3 +13,10 @@ make clean
 make
 make run
 ```
+
+or use
+
+```make all
+```
+
+To execute all with one command.
