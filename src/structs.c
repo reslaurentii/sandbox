@@ -26,9 +26,11 @@ int struct1(void)
 
 	PRINT2(c,s1.c[0],*s1.s);
 	PRINT2(s,s1.c,s1.s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	PRINT2(s,s2.cp,s2.ss1.s);
 	PRINT2(s,++s2.cp,++s2.ss1.s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
@@ -46,8 +48,9 @@ int struct2(void)
 	int i;
 
 	PRINT3(s,a[0].s,p->s,a[2].s1p->s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
-	printf("Ciclo for\n");
+	printf("Cycle for\n");
 
 	for(i=0; i<2; i++) {
 		PR(d,--a[i].i);
@@ -55,8 +58,10 @@ int struct2(void)
 		/* PR(d,++a[i].s[3]); */
 		NL;
 	}
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	PRINT3(s,++(p->s),a[(++p)->i].s,a[--(p->s1p->i)].s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
@@ -64,7 +69,7 @@ int struct2(void)
 int struct3(void)
 {
 	printf("----- START %s\n",__FUNCTION__);
-
+printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	static struct s2 a[] = {
 		{"abcd", a+1},
 		{"efgh",a+2},
@@ -77,12 +82,15 @@ int struct3(void)
 	for (i=0; i<3; i++ )
 		p[i] = a[i].s2p;
 	PRINT3(s,p[0]->s,(*p)->s,(**p).s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	swap((struct s1 *) *p, (struct s1 *) a);
 	PRINT3(s,p[0]->s,(*p)->s,(*p)->s2p->s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	swap((struct s1 *) p[0],(struct s1 *) (p[0]->s2p));
 	PRINT3(s,p[0]->s,(*++p[0]).s,++(*++(*p)->s2p).s);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }

@@ -1,4 +1,3 @@
-./build/sandbox
 Hello, world! --> 0Hello, world! --> 1Hello, world! --> 2Hello, world! --> 3Hello, world! --> 4Hello, world! --> 5Hello, world! --> 6Hello, world! --> 7Hello, world! --> 8Hello, world! --> 9Hello, world! --> 10
 [47m[30mThis text is BLACK![0m
 [31mThis text is RED![0m
@@ -8,35 +7,68 @@ Hello, world! --> 0Hello, world! --> 1Hello, world! --> 2Hello, world! --> 3
 [35mThis text is MAGENTA![0m
 [36mThis text is CYAN![0m
 [37mThis text is WHITE![0m
+----- START union_test
+bye
+** look at src/printf_jokes.c:24 **
+----- END union_test
+----- START pointer_joke1
+A
+
+** look at src/printf_jokes.c:38 **
+----- END pointer_joke1
+----- START pointer_joke2
+good
+** look at src/printf_jokes.c:50 **
+----- END pointer_joke2
+----- START string_cmp
+Night
+** look at src/printf_jokes.c:62 **
+----- END string_cmp
 11
 1
 0
 1
+** look at src/operators.c:14 **
 ----- START ifstatment
 x= 5	
+** look at src/ifstatment.c:13 **
 x= 5	
+** look at src/ifstatment.c:18 **
 x= 1	
+** look at src/ifstatment.c:23 **
 x= 7	z= 0	
+** look at src/ifstatment.c:29 **
 x= 3	z= 0	
+** look at src/ifstatment.c:33 **
 x= 3	z= 1	
+** look at src/ifstatment.c:37 **
 a= 1	z= 5	
+** look at src/ifstatment.c:42 **
 a= 0	z= 10	
+** look at src/ifstatment.c:47 **
 ----- END ifstatment
 ----- START pointer1
 a[i]= 0	a[i]= 1	a[i]= 2	a[i]= 3	a[i]= 4	
+** look at src/pointers.c:14 **
 *p= 0	*p= 1	*p= 2	*p= 3	*p= 4	
 
+** look at src/pointers.c:19 **
 p[i]= 1	p[i]= 2	p[i]= 3	p[i]= 4	p[i]= 0	
+** look at src/pointers.c:24 **
 *(p+i)= 0	*(p+i)= 2	*(p+i)= 4	
 
+** look at src/pointers.c:29 **
 *p= 4	*p= 3	*p= 2	*p= 1	*p= 0	
+** look at src/pointers.c:34 **
 p[-i]= 4	p[-i]= 3	p[-i]= 2	p[-i]= 1	p[-i]= 0	
+** look at src/pointers.c:38 **
 a[p-a]= 4	a[p-a]= 3	a[p-a]= 2	a[p-a]= 1	a[p-a]= 0	
+** look at src/pointers.c:43 **
 ----- END pointer1
 ----- START pointer2
-a= -45305728	*a= 0	
-p= -45305632	*p= -45305728	**p= 0	
-pp= -45305632	*pp= -45305728	**pp= 0	
+a= 169717888	*a= 0	
+p= 169717984	*p= 169717888	**p= 0	
+pp= 169717984	*pp= 169717888	**pp= 0	
 
 pp-p= 1	*pp-a= 1	**pp= 1	
 pp-p= 2	*pp-a= 2	**pp= 2	
@@ -61,33 +93,51 @@ POINTERSTEW
 ----- END pointer4
 ----- START preprocessor1
 a= 7	
+** look at src/preprocessor.c:17 **
 a= 0	a= 50	a= 100	a= 302	
+** look at src/preprocessor.c:24 **
 a= 2	a= 2	a= 2	
 a= 3	a= 4	a= 2	
+** look at src/preprocessor.c:30 **
 ----- END preprocessor1
 ----- START preprocessor2
 a= 1	
+** look at src/preprocessor.c:57 **
 a= 1	
 a= 1	
+** look at src/preprocessor.c:63 **
            
+** look at src/preprocessor.c:76 **
 ----- END preprocessor2
 ----- START flow1
 x= 5	
+** look at src/controlFlow.c:15 **
 x= 5	
+** look at src/controlFlow.c:19 **
 x= 1	
+** look at src/controlFlow.c:24 **
 x= 7	z= 0	
+** look at src/controlFlow.c:29 **
 x= 3	z= 0	
+** look at src/controlFlow.c:32 **
 x= 3	z= 1	
+** look at src/controlFlow.c:35 **
 ----- END flow1
 ----- START flow2
 x= 10	y= 10	
+** look at src/controlFlow.c:47 **
 x= 55	y= 10	
+** look at src/controlFlow.c:52 **
 x= 9	y= 11	z= 11	
+** look at src/controlFlow.c:60 **
 x= 9	y= 10	
+** look at src/controlFlow.c:64 **
 x= 10	y= 10	
+** look at src/controlFlow.c:68 **
 x= 0	y= 1000	
 x= 1	y= 100	
 x= 2	y= 10	
+** look at src/controlFlow.c:72 **
 ----- END flow2
 ----- START flow3
 low= 25	in= 0	high= 0	
@@ -99,20 +149,29 @@ SWITCH SWAMP
 ----- START struct1
 s1.c[0]= a	*s1.s= d	
 s1.c= abc	s1.s= def	
+** look at src/structs.c:29 **
 s2.cp= ghi	s2.ss1.s= mno	
 ++s2.cp= hi	++s2.ss1.s= no	
+** look at src/structs.c:33 **
 ----- END struct1
 ----- START struct2
 a[0].s= abcd	p->s= abcd	a[2].s1p->s= abcd	
-Ciclo for
+** look at src/structs.c:51 **
+Cycle for
 --a[i].i= 0	
 --a[i].i= 1	
+** look at src/structs.c:61 **
 ++(p->s)= bcd	a[(++p)->i].s= efgh	a[--(p->s1p->i)].s= ijkl	
+** look at src/structs.c:64 **
 ----- END struct2
 ----- START struct3
+** look at src/structs.c:72 **
 p[0]->s= efgh	(*p)->s= efgh	(**p).s= efgh	
+** look at src/structs.c:85 **
 p[0]->s= abcd	(*p)->s= abcd	(*p)->s2p->s= ijkl	
+** look at src/structs.c:89 **
 p[0]->s= ijkl	(*++p[0]).s= abcd	++(*++(*p)->s2p).s= jkl	
+** look at src/structs.c:93 **
 ----- END struct3
 ----- DONE!!! ----- last_func
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -11,29 +11,36 @@ int pointer1(void)
 	for(i=0; i<=4; i++)
 		PR(d,a[i]);
 	NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(p=&a[0]; p<=&a[4]; p++)
 		PR(d,*p);
 	NL; NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(p=&a[0],i=1; i<=5; i++)
 		PR(d,p[i]);
 	NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(p=a,i=0; p+i<=a+4; p++,i++)
 		PR(d,*(p+i));
 	NL; NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(p=a+4; p>=a; p--)
 		PR(d,*p);
 	NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	for(p=a+4,i=0; i<=4; i++)
 		PR(d,p[-i]);
 	NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(p=a+4; p>=a; p--)
 		PR(d,a[p-a]);
 	NL;
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }

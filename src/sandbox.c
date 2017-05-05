@@ -10,6 +10,7 @@
 #include "preprocessor.h"
 #include "structs.h"
 #include "controlFlow.h"
+#include "printf_jokes.h"
 
 static int last_func(void) {
 	printf("----- DONE!!! ----- %s\n",__FUNCTION__);
@@ -19,6 +20,7 @@ static int last_func(void) {
 
 typedef int (*intFunc)(void);
 static intFunc f[] =  {
+	printf_jokes,
 	basic_operator,
 	ifstatment,
 	pointer1,

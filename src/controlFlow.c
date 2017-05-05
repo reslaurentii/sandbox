@@ -12,25 +12,27 @@ int flow1(void)
 
 	if(y!=0) x=5;
 	PRINT1(d,x);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	if(y==0) x=3;
 	PRINT1(d,x);
-
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	x=1;
 	if(y<0) if(y>0) x=3;
 		else x=5;
 	PRINT1(d,x);
-
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	if(z=y<0) x=3;
 	else if(y==0) x=5;
 	else x=7;
 	PRINT2(d,x,z);
-
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	if(z=(y==0)) x=5; x=3;
 	PRINT2(d,x,z);
-
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	if(x=z=y) ; x=3;
 	PRINT2(d,x,z);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
@@ -42,10 +44,12 @@ int flow2(void)
 	x=y=0;
 	while(y<10) ++y; x += y;
 	PRINT2(d,x,y);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	x=y=0;
 	while(y<10) x += ++y;
 	PRINT2(d,x,y);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	y=1;
 	while (y<10) {
@@ -53,15 +57,19 @@ int flow2(void)
 		z = ++y;
 	}
 	PRINT3(d,x,y,z);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(y=1; y<10; y++) x=y;
 	PRINT2(d,x,y);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(y=1; (x=y)<10; y++) ;
 	PRINT2(d,x,y);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	for(x=0,y=1000; y>1; x++,y/=10)
 		PRINT2(d,x,y);
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }

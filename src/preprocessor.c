@@ -14,18 +14,20 @@ int preprocessor1(void)
 		int x=2;
 		PRINT(x*FUDGE(2));
 	}
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	{
 		int ce1;
 		for(ce1=0; ce1<=100; ce1+=50)
 			PRINT2(ce1, 9./5*ce1+32);
 	}
-
+printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	{
 		int x=1,y =2;
 		PRINT3(MAX(x++,y),x,y);
 		PRINT3(MAX(x++,y),x,y);
 	}
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 
@@ -50,13 +52,15 @@ int preprocessor2(void)
 	{
 		int x=1;
 		PRINT( -NEG(x) );
+
 	}
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 
 	{
 		PRINT(weeks(10080));
 		PRINT(days(mins(86400)));
 	}
-
+printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	{
 		static char input[]="\twihch\tif?";
 		char c;
@@ -69,6 +73,7 @@ int preprocessor2(void)
 				putchar(c);
 		putchar('\n');
 	}
+	printf("** look at %s:%d **\n",__FILE__, __LINE__);
 	printf("----- END %s\n",__FUNCTION__);
 	return 0;
 }
